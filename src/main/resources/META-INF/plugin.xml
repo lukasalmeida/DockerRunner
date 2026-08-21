@@ -11,7 +11,7 @@
                 class="com.olezelelabs.dockerrunner.DockerComposeRunAction"
                 text="Docker Up"
                 description="Roda docker compose up --build -d no projeto atual"
-                icon="AllIcons.Actions.Execute">
+                icon="/icons/play.svg">
             <!-- Adiciona o botão na barra de navegação superior -->
             <add-to-group group-id="NavBarToolBar" anchor="after" relative-to-action="NavBarVcsGroup"/>
         </action>
