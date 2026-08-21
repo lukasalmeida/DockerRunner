@@ -1,7 +1,7 @@
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!build/distributions/
+!build/distributions/DockerRunner*
 !**/src/main/**/build/
 !**/src/test/**/build/
 
