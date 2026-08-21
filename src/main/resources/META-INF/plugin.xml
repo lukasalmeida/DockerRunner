@@ -1,0 +1,19 @@
+<idea-plugin>
+    <id>com.olezelelabs.dockerrunner</id>
+    <name>Docker Runner</name>
+    <vendor>seu-nome</vendor>
+
+    <!-- Define a dependência mínima da plataforma -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action id="DockerComposeRunAction"
+                class="com.olezelelabs.dockerrunner.DockerComposeRunAction"
+                text="Docker Up"
+                description="Roda docker compose up --build -d no projeto atual"
+                icon="AllIcons.Actions.Execute">
+            <!-- Adiciona o botão na barra de navegação superior -->
+            <add-to-group group-id="NavBarToolBar" anchor="after" relative-to-action="NavBarVcsGroup"/>
+        </action>
+    </actions>
+</idea-plugin>
