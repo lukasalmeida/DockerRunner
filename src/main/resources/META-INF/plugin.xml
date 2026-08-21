@@ -4,20 +4,34 @@
     <vendor url="https://github.com/lukasalmeida">lukasalmeida</vendor>
 
     <description><![CDATA[
-      <h3>Docker Runner</h3>
-      <p>Uma ferramenta simples para rodar comandos docker-compose com um único clique diretamente da barra de navegação do seu IDE JetBrains.</p>
+      <h1>🐳 Docker Runner</h1>
+    <p>Uma ferramenta leve e eficiente para rodar e gerenciar o seu ambiente Docker diretamente da barra de navegação (Navbar) do seu IDE JetBrains com um único clique.</p>
 
-      <p><b>Recursos:</b></p>
-      <ul>
-        <li>Execução rápida de <i>docker compose up --build -d</i></li>
-        <li>Suporte universal para IDEs JetBrains (IntelliJ, WebStorm, GoLand, etc.)</li>
-        <li>Mais em breve</li>
+    <h2>✨ Recursos</h2>
+    <ul>
+        <li><strong>Execução Rápida:</strong> Dispara o comando <code>docker compose up --build -d</code> na raiz do projeto aberto instantaneamente.</li>
+        <li><strong>Feedback Visual Inteligente:</strong> O ícone muda dinamicamente para <strong>verde</strong> sempre que identifica containers do projeto ativos em segundo plano.</li>
+        <li><strong>Compatibilidade Universal:</strong> Funciona perfeitamente em toda a suíte de IDEs da JetBrains (IntelliJ IDEA, WebStorm, GoLand, PyCharm, etc.).</li>
+    </ul>
 
-      </ul>
+    <h2>⚙️ Como Habilitar o Botão na Navbar</h2>
+    <p>Por padrão, novas extensões não exibem o botão diretamente na barra de navegação superior. Siga o passo a passo abaixo para ativá-lo:</p>
+    <ol>
+        <li><strong>Abra o menu de contexto:</strong> Clique com o botão direito na área superior da janela do seu IDE (na barra de navegação).</li>
+        <li><strong>Personalize a barra:</strong> Selecione a opção <strong>"Customize Toolbar..."</strong> (Personalizar Barra de Ferramentas).</li>
+        <li><strong>Escolha a posição:</strong> Localize onde deseja posicionar o botão (a recomendação ideal para melhor usabilidade é ao lado do grupo do Git, usando a âncora <strong>"Right"</strong>).</li>
+        <li><strong>Adicione a ação:</strong> Clique no botão <strong>"+"</strong> ou <strong>"Add"</strong> (Adicionar) no canto superior esquerdo da janela de personalização.</li>
+        <li><strong>Busque o plugin:</strong> Procure por <strong>DockerRunner</strong> na lista, selecione-o e confirme a adição.</li>
+    </ol>
 
-      <br/>
-      <p>Para suporte ou sugestões, visite o <a href="https://github.com/seu-usuario/docker-runner">repositório no GitHub</a>.</p>
-    ]]></description>
+    <p><strong>Pronto!</strong> Sempre que o seu projeto contiver um arquivo <code>Dockerfile</code> e um <code>docker-compose.yml</code>, a extensão estará ativa. Basta aguardar o ícone mudar para verde indicando que os seus containers estão rodando com sucesso.</p>
+
+    <div class="footer">
+        <h2>📦 Instalação e Suporte</h2>
+        <p>Para instalar manualmente, acesse os arquivos de distribuição gerados no projeto.</p>
+        <p>Para suporte, dúvidas ou envio de sugestões, visite o <a href="https://github.com/seu-usuario/docker-runner">repositório oficial no GitHub</a>.</p>
+    </div>
+]]></description>
 
     <!-- Define a dependência mínima da plataforma -->
     <depends>com.intellij.modules.platform</depends>
