@@ -1,14 +1,30 @@
 <idea-plugin>
     <id>com.olezelelabs.dockerrunner</id>
-    <name>Docker Runner</name>
-    <vendor>seu-nome</vendor>
+    <name>Docker Runner (Alpha)</name>
+    <vendor url="https://github.com/lukasalmeida">lukasalmeida</vendor>
+
+    <description><![CDATA[
+      <h3>Docker Runner</h3>
+      <p>Uma ferramenta simples para rodar comandos docker-compose com um único clique diretamente da barra de navegação do seu IDE JetBrains.</p>
+
+      <p><b>Recursos:</b></p>
+      <ul>
+        <li>Execução rápida de <i>docker compose up --build -d</i></li>
+        <li>Suporte universal para IDEs JetBrains (IntelliJ, WebStorm, GoLand, etc.)</li>
+        <li>Mais em breve</li>
+
+      </ul>
+
+      <br/>
+      <p>Para suporte ou sugestões, visite o <a href="https://github.com/seu-usuario/docker-runner">repositório no GitHub</a>.</p>
+    ]]></description>
 
     <!-- Define a dependência mínima da plataforma -->
     <depends>com.intellij.modules.platform</depends>
 
     <actions>
         <action id="DockerComposeRunAction"
-                class="com.olezelelabs.dockerrunner.DockerComposeRunAction"
+                class="com.olezelerunner.dockerruner.DockerComposeRunAction"
                 text="Docker Up"
                 description="Roda docker compose up --build -d no projeto atual"
                 icon="/icons/play.svg">
