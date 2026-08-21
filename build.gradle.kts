@@ -1,22 +1,34 @@
 plugins {
-    kotlin("jvm") version "2.4.10"
+    id("java")
+    id("org.jetbrains.kotlin.jvm") version "2.1.20"
+    id("org.jetbrains.intellij.platform") version "2.18.1"
 }
 
-group = "org.example"
+group = "com.olezelerunner.dockerruner"
 version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-}
-
-dependencies {
-    testImplementation(kotlin("test"))
+    intellijPlatform {
+        defaultRepositories()
+    }
 }
 
 kotlin {
-    jvmToolchain(25)
+    jvmToolchain(17)
 }
 
-tasks.test {
-    useJUnitPlatform()
+dependencies {
+    intellijPlatform {
+        create("IC", "2024.1")
+        bundledPlugin("com.intellij.java")
+    }
+}
+
+intellijPlatform {
+    pluginVerification {
+        ides {
+            recommended()
+        }
+    }
 }
