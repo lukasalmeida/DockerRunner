@@ -2,14 +2,15 @@ package com.olezelerunner.dockerruner
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
-import com.intellij.openapi.project.Project
+import com.intellij.openapi.progress.ProgressIndicator
+import com.intellij.openapi.progress.ProgressManager
+import com.intellij.openapi.progress.Task
 import com.intellij.openapi.util.IconLoader
 import java.io.File
 import java.util.concurrent.TimeUnit
 
 class DockerComposeRunAction : AnAction() {
 
-    // Carrega os ícones dinamicamente
     private val normalIcon = IconLoader.getIcon("/icons/play.svg", javaClass)
     private val greenIcon = IconLoader.getIcon("/icons/play_verde.svg", javaClass)
 
@@ -17,15 +18,35 @@ class DockerComposeRunAction : AnAction() {
         val project = e.project ?: return
         val projectPath = project.basePath ?: return
 
-        try {
-            val process = ProcessBuilder("docker", "compose", "up", "--build", "-d")
-                .directory(File(projectPath))
-                .redirectErrorStream(true)
-                .start()
-            process.waitFor(2, TimeUnit.SECONDS)
-        } catch (ex: Exception) {
-            // Tratar erro se necessário
-        }
+        // Executa em background para evitar travamentos e fornecer feedback de carregamento
+        ProgressManager.getInstance().run(object : Task.Backgroundable(project, "Docker Runner", true) {
+            override fun run(indicator: ProgressIndicator) {
+                indicator.isIndeterminate = true
+                indicator.text = "Verificando status do Docker Compose..."
+
+                val isRunning = checkDockerComposeRunning(projectPath)
+
+                val command = if (isRunning) {
+                    indicator.text = "Derrubando containers (docker compose down)..."
+                    listOf("docker", "compose", "down")
+                } else {
+                    indicator.text = "Subindo containers (docker compose up --build -d)..."
+                    listOf("docker", "compose", "up", "--build", "-d")
+                }
+
+                try {
+                    val process = ProcessBuilder(command)
+                        .directory(File(projectPath))
+                        .redirectErrorStream(true)
+                        .start()
+
+                    // Aguarda o processo terminar em background
+                    process.waitFor()
+                } catch (ex: Exception) {
+                    // Tratamento de erro silencioso por enquanto
+                }
+            }
+        })
     }
 
     override fun update(e: AnActionEvent) {
@@ -36,14 +57,11 @@ class DockerComposeRunAction : AnAction() {
         }
 
         e.presentation.isEnabledAndVisible = true
-
-        // Verifica de forma leve se o Docker Compose está ativo neste projeto
         val isRunning = checkDockerComposeRunning(project.basePath!!)
 
-        // Altera o ícone dinamicamente com base no estado
         if (isRunning) {
             e.presentation.icon = greenIcon
-            e.presentation.text = "Docker Running (Up)"
+            e.presentation.text = "Docker Down (Stop)"
         } else {
             e.presentation.icon = normalIcon
             e.presentation.text = "Docker Up"
@@ -58,8 +76,6 @@ class DockerComposeRunAction : AnAction() {
 
             val output = process.inputStream.bufferedReader().readText()
             process.waitFor(1, TimeUnit.SECONDS)
-
-            // Se houver saída, significa que há containers rodando para este compose
             output.isNotBlank()
         } catch (e: Exception) {
             false

@@ -4,32 +4,32 @@
     <vendor url="https://github.com/lukasalmeida">lukasalmeida</vendor>
 
     <description><![CDATA[
-      <h1>🐳 Docker Runner</h1>
+      <h1>Docker Runner</h1>
     <p>Uma ferramenta leve e eficiente para rodar e gerenciar o seu ambiente Docker diretamente da barra de navegação (Navbar) do seu IDE JetBrains com um único clique.</p>
 
-    <h2>✨ Recursos</h2>
+    <h2>Recursos</h2>
     <ul>
-        <li><strong>Execução Rápida:</strong> Dispara o comando <code>docker compose up --build -d</code> na raiz do projeto aberto instantaneamente.</li>
-        <li><strong>Feedback Visual Inteligente:</strong> O ícone muda dinamicamente para <strong>verde</strong> sempre que identifica containers do projeto ativos em segundo plano.</li>
-        <li><strong>Compatibilidade Universal:</strong> Funciona perfeitamente em toda a suíte de IDEs da JetBrains (IntelliJ IDEA, WebStorm, GoLand, PyCharm, etc.).</li>
+        <li><strong>Ação Inteligente (Up/Down):</strong> Detecta o status dos seus containers automaticamente. Clique para disparar <code>docker compose up --build -d</code> ou clique novamente (quando estiver verde) para executar <code>docker compose down</code> e derrubar o ambiente.</li>
+        <li><strong>Execução Assíncrona e Feedback:</strong> O processo roda inteiramente em segundo plano, exibindo uma barra de carregamento nativa no rodapé do IDE para que a sua interface nunca congele durante o *build*.</li>
+        <li><strong>Compatibilidade Universal:</strong> Funciona perfeitamente em toda a suíte de IDEs da JetBrains (IntelliJ IDEA, WebStorm, GoLand, PyCharm, etc.)[cite: 1, 2].</li>
     </ul>
 
-    <h2>⚙️ Como Habilitar o Botão na Navbar</h2>
+    <h2>Como Habilitar o Botão na Navbar</h2>
     <p>Por padrão, novas extensões não exibem o botão diretamente na barra de navegação superior. Siga o passo a passo abaixo para ativá-lo:</p>
     <ol>
-        <li><strong>Abra o menu de contexto:</strong> Clique com o botão direito na área superior da janela do seu IDE (na barra de navegação).</li>
-        <li><strong>Personalize a barra:</strong> Selecione a opção <strong>"Customize Toolbar..."</strong> (Personalizar Barra de Ferramentas).</li>
-        <li><strong>Escolha a posição:</strong> Localize onde deseja posicionar o botão (a recomendação ideal para melhor usabilidade é ao lado do grupo do Git, usando a âncora <strong>"Right"</strong>).</li>
-        <li><strong>Adicione a ação:</strong> Clique no botão <strong>"+"</strong> ou <strong>"Add"</strong> (Adicionar) no canto superior esquerdo da janela de personalização.</li>
-        <li><strong>Busque o plugin:</strong> Procure por <strong>DockerRunner</strong> na lista, selecione-o e confirme a adição.</li>
+        <li><strong>Abra o menu de contexto:</strong> Clique com o botão direito na área superior da janela do seu IDE (na barra de navegação)[cite: 1].</li>
+        <li><strong>Personalize a barra:</strong> Selecione a opção <strong>"Customize Toolbar..."</strong> (Personalizar Barra de Ferramentas)[cite: 1].</li>
+        <li><strong>Escolha a posição:</strong> Localize onde deseja posicionar o botão (a recomendação ideal para melhor usabilidade é ao lado do grupo do Git, usando a âncora <strong>"Right"</strong>)[cite: 1].</li>
+        <li><strong>Adicione a ação:</strong> Clique no botão <strong>"+"</strong> ou <strong>"Add"</strong> (Adicionar) no canto superior esquerdo da janela de personalização[cite: 1].</li>
+        <li><strong>Busque o plugin:</strong> Procure por <strong>DockerRunner</strong> na lista, selecione-o e confirme a adição[cite: 1].</li>
     </ol>
 
-    <p><strong>Pronto!</strong> Sempre que o seu projeto contiver um arquivo <code>Dockerfile</code> e um <code>docker-compose.yml</code>, a extensão estará ativa. Basta aguardar o ícone mudar para verde indicando que os seus containers estão rodando com sucesso.</p>
+    <p><strong>Pronto!</strong> Sempre que o seu projeto contiver um arquivo <code>Dockerfile</code> e um <code>docker-compose.yml</code>, a extensão estará ativa. Basta aguardar o ícone mudar para verde indicando que os seus containers estão rodando com sucesso[cite: 1].</p>
 
     <div class="footer">
-        <h2>📦 Instalação e Suporte</h2>
+        <h2>Instalação e Suporte</h2>
         <p>Para instalar manualmente, acesse os arquivos de distribuição gerados no projeto.</p>
-        <p>Para suporte, dúvidas ou envio de sugestões, visite o <a href="https://github.com/seu-usuario/docker-runner">repositório oficial no GitHub</a>.</p>
+        <p>Para suporte, dúvidas ou envio de sugestões, visite o <a href="https://github.com/seu-usuario/docker-runner">repositório oficial no GitHub</a>[cite: 1].</p>
     </div>
 ]]></description>
 

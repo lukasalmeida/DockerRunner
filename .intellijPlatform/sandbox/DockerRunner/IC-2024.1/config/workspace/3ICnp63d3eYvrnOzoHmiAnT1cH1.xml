@@ -7,7 +7,7 @@
     </option>
   </component>
   <component name="FileEditorManager">
-    <leaf ideFingerprint="nn6uu3idkaux" SIDE_TABS_SIZE_LIMIT_KEY="-1">
+    <leaf ideFingerprint="31ai66j291jkt" SIDE_TABS_SIZE_LIMIT_KEY="-1">
       <file>
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider editor-type-id="text-editor" selected="true">
@@ -34,8 +34,8 @@
       "lastUsed": 1787283874151
     },
     "HTML": {
-      "usageCount": 2,
-      "lastUsed": 1787285097796
+      "usageCount": 3,
+      "lastUsed": 1787320404109
     }
   }
 }]]></component>
@@ -55,7 +55,7 @@
   </component>
   <component name="LanguageUsageStatistics">
     <language id="HTML">
-      <summary usageCount="2" lastUsage="1787285097807" />
+      <summary usageCount="3" lastUsage="1787320404115" />
     </language>
     <language id="JAVA">
       <summary usageCount="9" lastUsage="1787283877998" />
