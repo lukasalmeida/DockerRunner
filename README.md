@@ -25,7 +25,10 @@ Sempre que abrimos um novo projeto, precisamos recorrer ao terminal para rodar `
 
 ## 📦 Como Instalar (Uso Local)
 
-1. Baixe o arquivo `.zip` mais recente na aba de [Releases](https://github.com/lukasalmeida/DockerRunner/tree/62899833835a98680d08c5de6fd55a4745944487/releases/) deste repositório.
+1. Baixe o arquivo `.zip` mais recente na aba 
+   de [Releases](https://github.com/olezelelabs/DockerRunner/releases) 
+   deste 
+   repositório.
 2. Abra o seu IDE JetBrains.
 3. Vá em **Settings > Plugins**.
 4. Clique na engrenagem (Configurações) e selecione **Install Plugin from Disk...**
@@ -39,4 +42,4 @@ Se você quiser compilar o código fonte por conta própria:
 
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/lukasalmeida/docker-runner.git](https://github.com/lukasalmeida/docker-runner.git)
+   git clone [https://github.com/olezelelabs/docker-runner.git](https://github.com/olezelelabs/docker-runner.git)
