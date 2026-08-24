@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.olezelerunner.dockerruner"
-version = "1.0.2-SNAPSHOT"
+version = "1.0.2"
 
 repositories {
     mavenCentral()

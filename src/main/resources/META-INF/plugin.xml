@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.olezelelabs.dockerrunner</id>
-    <name>Docker Runner (Alpha)</name>
+    <name>Docker Runner</name>
     <vendor url="https://github.com/lukasalmeida">lukasalmeida</vendor>
 
     <description><![CDATA[
