@@ -33,6 +33,7 @@ Sempre que abrimos um novo projeto, precisamos recorrer ao terminal para rodar `
 3. Vá em **Settings > Plugins**.
 4. Clique na engrenagem (Configurações) e selecione **Install Plugin from Disk...**
 5. Escolha o arquivo `.zip` baixado e reinicie o IDE.
+6. O botão do Docker Runner já aparece na barra superior do IDE, sem necessidade de customização manual.
 
 ---
 

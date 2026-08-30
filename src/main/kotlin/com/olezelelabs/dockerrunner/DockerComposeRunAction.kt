@@ -1,4 +1,4 @@
-package com.olezelerunner.dockerruner
+package com.olezelelabs.dockerrunner
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent

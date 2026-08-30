@@ -14,16 +14,8 @@
         <li><strong>Compatibilidade Universal:</strong> Funciona perfeitamente em toda a suíte de IDEs da JetBrains (IntelliJ IDEA, WebStorm, GoLand, PyCharm, etc.).</li>
     </ul>
 
-    <h2>Como Habilitar o Botão na Navbar</h2>
-    <p>Por padrão, novas extensões não exibem o botão diretamente na barra de navegação superior. Siga o passo a passo abaixo para ativá-lo:</p>
-    <ol>
-        <li><strong>Abra o menu de contexto:</strong> Clique com o botão direito na área superior da janela do seu IDE (na barra de navegação).</li>
-        <li><strong>Personalize a barra:</strong> Selecione a opção <strong>"Customize Toolbar..."</strong> (Personalizar Barra de Ferramentas).</li>
-        <li><strong>Escolha a posição:</strong> Localize onde deseja posicionar o botão (a recomendação ideal para melhor usabilidade é ao lado do grupo do Git, usando a âncora <strong>"Right"</strong>).</li>
-        <li><strong>Adicione a ação:</strong> Clique no botão <strong>"+"</strong> ou <strong>"Add"</strong> (Adicionar) no canto superior esquerdo da janela de personalização.</li>
-        <li><strong>Busque o plugin:</strong> Procure por <strong>DockerRunner</strong> na lista, selecione-o e confirme a adição.</li>
-    </ol>
-
+    <h2>Botão já ativo na barra superior</h2>
+    <p>Ao instalar o plugin, o botão é exibido automaticamente na barra superior do IDE, sem necessidade de personalizar a toolbar.</p>
     <p><strong>Pronto!</strong> Sempre que o seu projeto contiver um arquivo <code>Dockerfile</code> e um <code>docker-compose.yml</code>, a extensão estará ativa. Basta aguardar o ícone mudar para verde indicando que os seus containers estão rodando com sucesso.</p>
 
     <div class="footer">
@@ -38,11 +30,12 @@
 
     <actions>
         <action id="DockerComposeRunAction"
-                class="com.olezelerunner.dockerruner.DockerComposeRunAction"
+                class="com.olezelelabs.dockerrunner.DockerComposeRunAction"
                 text="Docker Up"
                 description="Roda docker compose up --build -d no projeto atual"
                 icon="/icons/play.svg">
-            <!-- Adiciona o botão na barra de navegação superior -->
+            <!-- Exibe o botão diretamente na barra superior do IDE após a instalação -->
+            <add-to-group group-id="MainToolBar" anchor="last"/>
             <add-to-group group-id="NavBarToolBar" anchor="after" relative-to-action="NavBarVcsGroup"/>
         </action>
     </actions>
