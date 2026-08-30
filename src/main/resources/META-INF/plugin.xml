@@ -29,14 +29,20 @@
     <depends>com.intellij.modules.platform</depends>
 
     <actions>
-        <action id="DockerComposeRunAction"
-                class="com.olezelelabs.dockerrunner.DockerComposeRunAction"
-                text="Docker Up"
-                description="Roda docker compose up --build -d no projeto atual"
-                icon="/icons/play.svg">
-            <!-- Exibe o botão diretamente na barra superior do IDE após a instalação -->
+        <group id="DockerRunnerToolbarGroup"
+               text="Docker Runner"
+               compact="true"
+               popup="false">
+            <action id="DockerComposeRunAction"
+                    class="com.olezelelabs.dockerrunner.DockerComposeRunAction"
+                    text="Docker Up"
+                    description="Roda docker compose up --build -d no projeto atual"
+                    icon="/icons/play.svg"/>
+
+            <!-- Exibe o botão automaticamente na barra superior principal do IDE após a instalação -->
             <add-to-group group-id="MainToolBar" anchor="last"/>
+            <!-- Mantém o botão também na barra de navegação do projeto para acessibilidade -->
             <add-to-group group-id="NavBarToolBar" anchor="after" relative-to-action="NavBarVcsGroup"/>
-        </action>
+        </group>
     </actions>
 </idea-plugin>
