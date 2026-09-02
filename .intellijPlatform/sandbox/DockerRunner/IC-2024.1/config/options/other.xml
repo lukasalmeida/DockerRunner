@@ -9,7 +9,7 @@
   </component>
   <component name="PropertyService"><![CDATA[{
   "keyToString": {
-    "LAST_CALCULATED_COLOR_INDEX_KEY": "0",
+    "LAST_CALCULATED_COLOR_INDEX_KEY": "1",
     "NewProjectWizard.generateOnboardingTips": "true",
     "RunOnceActivity.ide.auto-popup.quick-doc.initialized": "true",
     "RunOnceActivity.java.code.vision.default.position.was.set": "true",
@@ -24,7 +24,7 @@
     "installed.kotlin.plugin.version": "241.14494.240-IJ",
     "jdk.selected.JAVA_MODULE": "temurin-17",
     "migrated.non.roamable.values.from.general.settings": "true",
-    "onboarding.generation.number": "1",
+    "onboarding.generation.number": "2",
     "previousColorScheme": "_@user_Darcula",
     "project.wizard.group": "NPW.simple-project.Java",
     "promo.ignore.ultimate.edition": "true",

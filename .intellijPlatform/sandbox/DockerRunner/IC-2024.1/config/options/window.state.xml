@@ -1,11 +1,12 @@
 <application>
   <component name="WindowManager">
-    <frame x="0" y="0" width="1366" height="768" extendedState="6" />
+    <frame x="0" y="23" width="1366" height="745" extendedState="6" />
   </component>
   <component name="WindowStateApplicationService">
-    <state x="283" y="58" width="800" height="612" key="new project wizard" timestamp="1787277597160">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="283" y="79" width="800" height="621" key="new project wizard" timestamp="1788311363645">
+      <screen x="0" y="23" width="1366" height="745" />
     </state>
     <state x="283" y="58" width="800" height="612" key="new project wizard/0.0.1366.768" timestamp="1787277597160" />
+    <state x="283" y="79" width="800" height="621" key="new project wizard/0.23.1366.745" timestamp="1788311363645" />
   </component>
 </application>

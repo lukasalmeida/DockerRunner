@@ -4,7 +4,7 @@
       <map>
         <entry key="$USER_HOME$/IdeaProjects/teste">
           <value>
-            <RecentProjectMetaInfo frameTitle="teste – ~/IdeaProjects/teste/index.html" opened="true" projectWorkspaceId="3ICnp63d3eYvrnOzoHmiAnT1cH1">
+            <RecentProjectMetaInfo frameTitle="teste – ~/IdeaProjects/teste/index.html" projectWorkspaceId="3ICnp63d3eYvrnOzoHmiAnT1cH1">
               <option name="activationTimestamp" value="1787320463615" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
               <option name="build" value="IC-241.14494.240" />
@@ -18,9 +18,25 @@
             </RecentProjectMetaInfo>
           </value>
         </entry>
+        <entry key="$USER_HOME$/IdeaProjects/untitled">
+          <value>
+            <RecentProjectMetaInfo frameTitle="untitled – Main.java" opened="true" projectWorkspaceId="3Ikb9kZBQ5O07NOhpYutvTSFy8D">
+              <option name="activationTimestamp" value="1788311839457" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-241.14494.240" />
+              <option name="buildTimestamp" value="1711602720000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="1" />
+              </option>
+              <frame x="0" y="23" width="1366" height="745" extendedState="6" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1788311365955" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
       </map>
     </option>
-    <option name="lastOpenedProject" value="$USER_HOME$/IdeaProjects/teste" />
+    <option name="lastOpenedProject" value="$USER_HOME$/IdeaProjects/untitled" />
     <option name="lastProjectLocation" value="$USER_HOME$/IdeaProjects" />
   </component>
 </application>
