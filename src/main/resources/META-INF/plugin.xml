@@ -33,6 +33,12 @@
                text="Docker Runner"
                compact="true"
                popup="false">
+            <action id="DockerComposeCleanAction"
+                    class="com.olezelelabs.dockerrunner.DockerComposeCleanAction"
+                    text="Clean (Down -v)"
+                    description="Executa docker compose down -v com confirmação"
+                    icon="/icons/clean.svg"/>
+
             <action id="DockerComposeRunAction"
                     class="com.olezelelabs.dockerrunner.DockerComposeRunAction"
                     text="Docker Up"

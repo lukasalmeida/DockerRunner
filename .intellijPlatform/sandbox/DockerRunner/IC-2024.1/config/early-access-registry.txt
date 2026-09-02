@@ -1,3 +1,5 @@
+debugger.new.tool.window.layout
+false
 ide.experimental.ui
 false
 idea.plugins.compatible.build
