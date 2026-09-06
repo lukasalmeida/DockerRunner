@@ -12,8 +12,11 @@
     <e n="DockerComposeCleanAction">
       <i c="3" l="1788733060811" />
     </e>
+    <e n="DockerComposeRestartAction">
+      <i c="1" l="1788734023288" />
+    </e>
     <e n="DockerComposeRunAction">
-      <i c="14" l="1788733265227" />
+      <i c="16" l="1788734035348" />
     </e>
     <e n="EditorBackSpace">
       <i c="60" l="1788319050595" />

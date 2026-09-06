@@ -45,6 +45,12 @@
                     description="Roda docker compose up --build -d no projeto atual"
                     icon="/icons/play.svg"/>
 
+            <action id="DockerComposeRestartAction"
+                    class="com.olezelelabs.dockerrunner.DockerComposeRestartAction"
+                    text="Restart"
+                    description="Reinicia os containers (docker compose down então up --build -d)"
+                    icon="/icons/restart.svg"/>
+
             <!-- Exibe o botão automaticamente na barra superior principal do IDE após a instalação -->
             <add-to-group group-id="MainToolBar" anchor="last"/>
             <!-- Mantém o botão também na barra de navegação do projeto para acessibilidade -->
