@@ -36,16 +36,16 @@
   <component name="FileTypeUsageLocalSummary"><![CDATA[{
   "data": {
     "JAVA": {
-      "usageCount": 5,
-      "lastUsed": 1788318907917
+      "usageCount": 10,
+      "lastUsed": 1788733225466
     },
     "textmate": {
-      "usageCount": 1,
-      "lastUsed": 1788319024973
+      "usageCount": 6,
+      "lastUsed": 1788733224477
     },
     "YAML": {
-      "usageCount": 1,
-      "lastUsed": 1788319053930
+      "usageCount": 6,
+      "lastUsed": 1788733226316
     }
   }
 }]]></component>
@@ -64,13 +64,13 @@
   </component>
   <component name="LanguageUsageStatistics">
     <language id="JAVA">
-      <summary usageCount="5" lastUsage="1788318907924" />
+      <summary usageCount="10" lastUsage="1788733225466" />
     </language>
     <language id="textmate">
-      <summary usageCount="1" lastUsage="1788319024973" />
+      <summary usageCount="6" lastUsage="1788733224482" />
     </language>
     <language id="yaml">
-      <summary usageCount="1" lastUsage="1788319053930" />
+      <summary usageCount="6" lastUsage="1788733226316" />
     </language>
   </component>
   <component name="ProjectView">
@@ -133,7 +133,7 @@
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="2" column="89" selection-start-line="2" selection-start-column="89" selection-end-line="2" selection-end-column="89" />
+          <caret line="2" column="89" lean-forward="true" selection-start-line="2" selection-start-column="89" selection-end-line="2" selection-end-column="89" />
         </state>
       </provider>
     </entry>
