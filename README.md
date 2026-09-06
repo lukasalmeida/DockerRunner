@@ -1,46 +1,62 @@
 # Docker Runner 🐳
 
-> Uma extensão simples, elegante e eficiente para os IDEs da JetBrains que permite controlar containers Docker diretamente da barra de navegação superior.
+Plugin para IDEs JetBrains que simplifica o controle do ambiente Docker Compose do projeto ativo diretamente da barra de navegação do IDE.
 
-## 🚀 O Problema
-Sempre que abrimos um novo projeto, precisamos recorrer ao terminal para rodar `docker compose up --build -d`. O **Docker Runner** elimina essa fricção, colocando um botão de execução dedicado diretamente na sua *Navbar*.
+## Visão geral
 
----
+O Docker Runner elimina a necessidade de abrir o terminal para subir ou derrubar o ambiente local do projeto. Com um único clique, o plugin detecta o estado atual do Docker Compose e executa a ação correta.
 
-## ✨ Recursos
+## Funcionalidades
 
-* **Execução Rápida:** Roda o comando `docker compose up --build -d` com um único clique no diretório raiz do projeto aberto.
-* **Compatibilidade Universal:** Funciona perfeitamente em toda a suíte de IDEs da JetBrains (IntelliJ IDEA, WebStorm, PyCharm, GoLand, PhpStorm, etc.).
-* **Isolamento por Projeto:** Detecta automaticamente o caminho do projeto ativo através da API do IntelliJ.
+- Toggle inteligente do ambiente Docker Compose
+  - Se os containers estiverem parados, executa `docker compose up --build -d`
+  - Se estiverem em execução, executa `docker compose down`
+- Reinício do ambiente com ação dedicada
+  - `docker compose down` + `docker compose up --build -d`
+- Limpeza completa com confirmação
+  - `docker compose down -v` para remover volumes
+- Detecção automática do projeto ativo
+- Início automático do Docker quando ele não está disponível
+- Execução em segundo plano para não bloquear a interface do IDE
+- Integração direta na barra principal e na barra de navegação do projeto
 
----
+## Ações incluídas
 
-## 🛠️ Tecnologias Utilizadas
+- Docker Up
+- Restart
+- Clean (Down -v)
 
-* **Kotlin** (Linguagem principal)
-* **IntelliJ Platform Gradle Plugin** (Moderno, versão 2.x)
-* **ProcessBuilder** (Para automação e execução nativa de comandos do sistema)
+## Instalação
 
----
+1. Acesse a aba de releases do repositório: https://github.com/olezelelabs/DockerRunner/releases
+2. Baixe o arquivo `.zip` da versão mais recente
+3. Abra o IDE JetBrains
+4. Vá em `Settings > Plugins`
+5. Clique na engrenagem e selecione `Install Plugin from Disk...`
+6. Escolha o arquivo `.zip` e reinicie o IDE
 
-## 📦 Como Instalar (Uso Local)
+## Compilação local
 
-1. Baixe o arquivo `.zip` mais recente na aba 
-   de [Releases](https://github.com/olezelelabs/DockerRunner/releases) 
-   deste 
-   repositório.
-2. Abra o seu IDE JetBrains.
-3. Vá em **Settings > Plugins**.
-4. Clique na engrenagem (Configurações) e selecione **Install Plugin from Disk...**
-5. Escolha o arquivo `.zip` baixado e reinicie o IDE.
-6. O botão do Docker Runner já aparece na barra superior do IDE, sem necessidade de customização manual.
+```bash
+git clone https://github.com/olezelelabs/DockerRunner.git
+cd DockerRunner
+./gradlew build
+```
 
----
+Para testar o plugin em execução no IDE:
 
-## ⚙️ Como Compilar o Projeto do Zero
+```bash
+./gradlew runIde
+```
 
-Se você quiser compilar o código fonte por conta própria:
+## Changelog
 
-1. Clone o repositório:
-   ```bash
-   git clone [https://github.com/olezelelabs/docker-runner.git](https://github.com/olezelelabs/docker-runner.git)
+Consulte o arquivo [CHANGELOG.md](CHANGELOG.md) para acompanhar as mudanças por versão.
+
+## Repositório
+
+- GitHub: https://github.com/olezelelabs/DockerRunner
+
+## Compatibilidade
+
+Compatível com IntelliJ IDEA, WebStorm, PyCharm, GoLand, PhpStorm e demais IDEs baseados na IntelliJ Platform.

@@ -1,60 +1,63 @@
 <idea-plugin>
     <id>com.olezelelabs.dockerrunner</id>
     <name>Docker Runner</name>
-    <vendor url="https://github.com/lukasalmeida">lukasalmeida</vendor>
+   <vendor url="https://github.com/olezelelabs/DockerRunner">olezelelabs</vendor>
 
     <description><![CDATA[
-      <h1>Docker Runner</h1>
-    <p>Uma ferramenta leve e eficiente para rodar e gerenciar o seu ambiente Docker diretamente da barra de navegação (Navbar) do seu IDE JetBrains com um único clique.</p>
+       <h2>Gerencie seu ambiente Docker em um clique</h2>
+       <p>O Docker Runner adiciona um botão direto na barra superior do IDE para subir, reiniciar ou limpar o ambiente Docker Compose do projeto atual sem abrir o terminal.</p>
 
-    <h2>Recursos</h2>
-    <ul>
-        <li><strong>Ação Inteligente (Up/Down):</strong> Detecta o status dos seus containers automaticamente. Clique para disparar <code>docker compose up --build -d</code> ou clique novamente (quando estiver verde) para executar <code>docker compose down</code> e derrubar o ambiente.</li>
-        <li><strong>Execução Assíncrona e Feedback:</strong> O processo roda inteiramente em segundo plano, exibindo uma barra de carregamento nativa no rodapé do IDE para que a sua interface nunca congele durante o *build*.</li>
-        <li><strong>Compatibilidade Universal:</strong> Funciona perfeitamente em toda a suíte de IDEs da JetBrains (IntelliJ IDEA, WebStorm, GoLand, PyCharm, etc.).</li>
-    </ul>
+       <h3>Funcionalidades</h3>
+       <ul>
+           <li><strong>Docker Up:</strong> detecta o estado do projeto e executa <code>docker compose up --build -d</code> quando os containers estão parados.</li>
+           <li><strong>Toggle inteligente:</strong> se os containers já estiverem rodando, o mesmo botão executa <code>docker compose down</code> para derrubar o ambiente.</li>
+           <li><strong>Restart:</strong> reinicia os containers em sequência com <code>docker compose down</code> e <code>docker compose up --build -d</code>.</li>
+           <li><strong>Clean (Down -v):</strong> remove containers e volumes com confirmação antes da execução.</li>
+           <li><strong>Docker auto-start:</strong> tenta iniciar o Docker Desktop ou o serviço local automaticamente quando ele não está disponível.</li>
+       </ul>
 
-    <h2>Botão já ativo na barra superior</h2>
-    <p>Ao instalar o plugin, o botão é exibido automaticamente na barra superior do IDE, sem necessidade de personalizar a toolbar.</p>
-    <p><strong>Pronto!</strong> Sempre que o seu projeto contiver um arquivo <code>Dockerfile</code> e um <code>docker-compose.yml</code>, a extensão estará ativa. Basta aguardar o ícone mudar para verde indicando que os seus containers estão rodando com sucesso.</p>
+       <p>Compatível com IntelliJ IDEA, WebStorm, GoLand, PyCharm, PhpStorm e outras IDEs da JetBrains baseadas na IntelliJ Platform.</p>
+       <p>Mais informações: <a href="https://github.com/olezelelabs/DockerRunner">GitHub do projeto</a></p>
+   ]]></description>
 
-    <div class="footer">
-        <h2>Instalação e Suporte</h2>
-        <p>Para instalar manualmente, acesse os arquivos de distribuição gerados no projeto.</p>
-        <p>Para suporte, dúvidas ou envio de sugestões, visite o <a href="https://github.com/seu-usuario/docker-runner">repositório oficial no GitHub</a>.</p>
-    </div>
-]]></description>
+   <change-notes><![CDATA[
+       <h2>v1.2.0</h2>
+       <ul>
+           <li>Adicionada ação de toggle inteligente para subir ou derrubar o ambiente Docker Compose do projeto ativo.</li>
+           <li>Adicionada ação de reinício com <code>docker compose down</code> + <code>docker compose up --build -d</code>.</li>
+           <li>Adicionada ação de limpeza com confirmação para <code>docker compose down -v</code>.</li>
+           <li>Melhorado o comportamento de detecção do estado do Docker e do projeto atual.</li>
+           <li>Integração do plugin na barra principal do IDE e na barra de navegação do projeto.</li>
+       </ul>
+   ]]></change-notes>
 
-    <!-- Define a dependência mínima da plataforma -->
-    <depends>com.intellij.modules.platform</depends>
+   <depends>com.intellij.modules.platform</depends>
 
-    <actions>
-        <group id="DockerRunnerToolbarGroup"
-               text="Docker Runner"
-               compact="true"
-               popup="false">
-            <action id="DockerComposeCleanAction"
-                    class="com.olezelelabs.dockerrunner.DockerComposeCleanAction"
-                    text="Clean (Down -v)"
-                    description="Executa docker compose down -v com confirmação"
-                    icon="/icons/clean.svg"/>
+   <actions>
+       <group id="DockerRunnerToolbarGroup"
+              text="Docker Runner"
+              compact="true"
+              popup="false">
+           <action id="DockerComposeCleanAction"
+                   class="com.olezelelabs.dockerrunner.DockerComposeCleanAction"
+                   text="Clean (Down -v)"
+                   description="Executa docker compose down -v com confirmação"
+                   icon="/icons/clean.svg"/>
 
-            <action id="DockerComposeRunAction"
-                    class="com.olezelelabs.dockerrunner.DockerComposeRunAction"
-                    text="Docker Up"
-                    description="Roda docker compose up --build -d no projeto atual"
-                    icon="/icons/play.svg"/>
+           <action id="DockerComposeRunAction"
+                   class="com.olezelelabs.dockerrunner.DockerComposeRunAction"
+                   text="Docker Up"
+                   description="Roda docker compose up --build -d no projeto atual"
+                   icon="/icons/play.svg"/>
 
-            <action id="DockerComposeRestartAction"
-                    class="com.olezelelabs.dockerrunner.DockerComposeRestartAction"
-                    text="Restart"
-                    description="Reinicia os containers (docker compose down então up --build -d)"
-                    icon="/icons/restart.svg"/>
+           <action id="DockerComposeRestartAction"
+                   class="com.olezelelabs.dockerrunner.DockerComposeRestartAction"
+                   text="Restart"
+                   description="Reinicia os containers (docker compose down então up --build -d)"
+                   icon="/icons/restart.svg"/>
 
-            <!-- Exibe o botão automaticamente na barra superior principal do IDE após a instalação -->
-            <add-to-group group-id="MainToolBar" anchor="last"/>
-            <!-- Mantém o botão também na barra de navegação do projeto para acessibilidade -->
-            <add-to-group group-id="NavBarToolBar" anchor="after" relative-to-action="NavBarVcsGroup"/>
-        </group>
-    </actions>
+           <add-to-group group-id="MainToolBar" anchor="last"/>
+           <add-to-group group-id="NavBarToolBar" anchor="after" relative-to-action="NavBarVcsGroup"/>
+       </group>
+   </actions>
 </idea-plugin>
